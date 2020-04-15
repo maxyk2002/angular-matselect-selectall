@@ -1,0 +1,17 @@
+
+ <h1 >Product</h1>
+
+
+  <mat-select placeholder="Product Category 1" multiple
+    (change)="bindProductDropDown('ProdCat2', $event)" [(ngModel)]="selectedProdCat1"
+    name="ProdCat1" #ProdCat1="ngModel" required>
+
+    <mat-option #allSelected (click)="toggleAllSelection()"  value="all">All</mat-option>
+
+    <mat-option (click)="tosslePerOne(allSelected.viewValue)" *ngFor="let prodCat1 of productCat1"
+      [value]="prodCat1.Value">
+      {{ prodCat1.Name }} ({{ prodCat1.Value }})
+    </mat-option>
+  </mat-select>
+ 
+
